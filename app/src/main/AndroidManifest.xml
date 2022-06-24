@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="tech.jubin.demo.flipper.intro">
+
+    <application
+        android:name=".FlipperDemoApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.FlipperDemoApplication">
+        <activity
+            android:name=".activities.SharedPreferencesDemoActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.NetworkDemoActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.DatabaseDemoActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.LayoutInspectorDemoActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.DeepLinkActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="deep_link_activity"
+                    android:scheme="flipper" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activities.MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.facebook.flipper.android.diagnostics.FlipperDiagnosticActivity"
+            android:exported="true" />
+    </application>
+
+</manifest>
